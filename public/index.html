@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ko" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Re-ric · K-pop Lyrics, Your English.</title>
+    <meta name="description" content="좋아하는 K-pop 가사를 직접 영어로 번안하고, AI 튜터 리키에게 문법·어휘·의미 전달·자연스러움 피드백을 받아보세요." />
+    <meta name="theme-color" content="#f8f7fe" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Dancing+Script:wght@700&display=swap" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <script src="/vendor/marked.min.js" defer></script>
+    <script src="/vendor/purify.min.js" defer></script>
+    <script type="module" src="/js/main.js"></script>
+  </head>
+  <body class="h-full overflow-hidden">
+    <div id="app" class="app-shell">
+      <main id="main" class="relative min-h-0 flex-1 overflow-hidden">
+        <!-- ═════════════ INTRO ═════════════ -->
+        <section data-view="intro" class="relative h-full overflow-hidden text-white" hidden>
+          <div class="intro-bg absolute inset-0"></div>
+          <div class="beam left-[2%]" style="--r: -24deg"></div>
+          <div class="beam left-[28%]" style="--r: -8deg; animation-delay: -2s"></div>
+          <div class="beam right-[26%]" style="--r: 10deg; animation-delay: -4s"></div>
+          <div class="beam right-[2%]" style="--r: 26deg; animation-delay: -1s"></div>
+          <div class="pointer-events-none absolute inset-x-0 top-[58%] h-40 bg-[radial-gradient(closest-side,rgba(205,195,255,.75),transparent)] blur-xl"></div>
+          <span class="bokeh left-[12%] top-[62%] h-1.5 w-1.5"></span>
+          <span class="bokeh left-[30%] top-[66%] h-1 w-1" style="animation-delay: -1s"></span>
+          <span class="bokeh left-[48%] top-[60%] h-2 w-2" style="animation-delay: -2s"></span>
+          <span class="bokeh left-[66%] top-[64%] h-1 w-1" style="animation-delay: -.5s"></span>
+          <span class="bokeh left-[82%] top-[61%] h-1.5 w-1.5" style="animation-delay: -1.6s"></span>
+          <span class="bokeh left-[22%] top-[70%] h-1 w-1" style="animation-delay: -2.4s"></span>
+          <span class="bokeh left-[74%] top-[69%] h-1 w-1" style="animation-delay: -.8s"></span>
+          <!-- crowd -->
+          <svg class="pointer-events-none absolute inset-x-0 bottom-0 h-[34%] w-full" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="crowd" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#140d3a" stop-opacity=".75" />
+                <stop offset=".45" stop-color="#0b0726" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#crowd)" d="M0 92c10-8 18-8 26 0 6-14 18-16 26-4 8-10 20-9 26 2l4-30 8 1-3 34c10-8 20-6 26 4 7-12 19-13 27-2 6-10 17-12 25-2l3-36 8 1-2 38c8-6 18-5 24 4 8-11 20-12 28-1 7-9 18-10 25 0l5-28 8 2-5 30c9-7 20-6 26 3 7-10 18-11 25-1 5-7 15-8 21-1V200H0Z" />
+          </svg>
+          <!-- doodles -->
+          <svg class="pointer-events-none absolute left-7 top-[10%] h-12 w-12 text-white/90" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M24 4l5 13 14 1-11 9 4 14-12-8-12 8 4-14L5 18l14-1z" /></svg>
+          <svg class="pointer-events-none absolute right-10 top-[17%] h-7 w-7 text-white/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z" /></svg>
+          <svg class="pointer-events-none absolute right-12 top-[47%] h-12 w-12 text-white/80" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 30c4-10 14-14 20-8M30 10v16a5 5 0 1 1-4-5" /><path d="M36 6l2 4 4 1-4 2-1 4-2-4-4-1 4-2z" /></svg>
+          <svg class="pointer-events-none absolute left-8 top-[50%] h-8 w-8 text-white/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" /></svg>
+
+          <div class="relative z-10 flex h-full flex-col items-center px-8 text-center" style="padding-top: max(18vh, 5rem)">
+            <div class="relative animate-fade-up">
+              <h1 class="font-script text-[84px] leading-none tracking-tight drop-shadow-[0_6px_28px_rgba(180,160,255,.75)]">Re-ric</h1>
+              <svg class="absolute -right-7 -top-3 h-9 w-9 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 6.4L21 9l-5 4.4L17.5 20 12 16.6 6.5 20 8 13.4 3 9l6.4-.6z" /></svg>
+            </div>
+            <p class="mt-1 -rotate-6 self-end pr-4 font-script text-[26px] leading-tight text-white/95 animate-fade-up" style="animation-delay: 120ms">K-pop Lyrics,<br />&nbsp;&nbsp;Your English.</p>
+            <p class="mt-10 text-[15px] font-medium leading-7 text-white/90 animate-fade-up" style="animation-delay: 220ms">좋아하는 K-pop으로<br />영어 실력을 더하다.</p>
+            <div class="mt-auto w-full max-w-xs" style="padding-bottom: max(2.75rem, env(safe-area-inset-bottom))">
+              <button type="button" id="intro-start" class="btn-white w-full py-4 text-lg">시작하기 <span aria-hidden="true">→</span></button>
+              <button type="button" id="intro-login" class="mt-5 text-sm font-semibold text-white/90 underline underline-offset-4">로그인</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═════════════ HOME ═════════════ -->
+        <section data-view="home" class="view" hidden>
+          <div class="px-5 pb-10" style="padding-top: max(1.25rem, env(safe-area-inset-top))">
+            <header class="flex items-center justify-between">
+              <a href="#/home" class="relative inline-flex items-start" aria-label="Re-ric 홈">
+                <span class="font-script text-[36px] leading-none text-lav-800">Re-ric</span>
+                <svg class="-ml-0.5 -mt-1 h-5 w-5 text-lav-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 6.4L21 9l-5 4.4L17.5 20 12 16.6 6.5 20 8 13.4 3 9l6.4-.6z" /></svg>
+              </a>
+              <a href="#/chat" class="btn-icon relative" aria-label="AI 튜터 리키와 대화">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z" /><path stroke-linecap="round" d="M8.5 12h.01M12 12h.01M15.5 12h.01" /></svg>
+                <span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-rose-400 ring-2 ring-surface"></span>
+              </a>
+            </header>
+
+            <h1 id="home-greeting" class="mt-5 text-[26px] font-extrabold leading-[1.35] tracking-tight text-ink"></h1>
+
+            <form id="search-form" class="mt-5" autocomplete="off" role="search">
+              <div class="search-pill">
+                <input id="search-input" class="min-w-0 flex-1 bg-transparent py-2 text-[15px] text-ink placeholder:text-ink-400 focus:outline-none" type="search" placeholder="곡 제목, 아티스트로 검색해보세요" maxlength="100" />
+                <button type="submit" class="grid h-10 w-10 place-items-center rounded-full text-ink-500 transition hover:bg-lav-100 hover:text-lav-600" aria-label="검색">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path stroke-linecap="round" d="m20 20-3.5-3.5" /></svg>
+                </button>
+              </div>
+            </form>
+            <div class="mt-3 flex items-center justify-between gap-3">
+              <div id="direction-toggle" class="seg-wrap" role="tablist" aria-label="번안 방향">
+                <button type="button" class="seg" data-direction="ko-en" role="tab">한국어 → 영어</button>
+                <button type="button" class="seg" data-direction="en-ko" role="tab">영어 → 한국어</button>
+              </div>
+              <p id="direction-caption" class="text-right text-[11px] leading-4 text-ink-400"></p>
+            </div>
+
+            <div id="search-wrap" class="mt-6" hidden>
+              <div class="mb-3 flex items-center justify-between gap-3">
+                <p id="search-caption" class="text-sm font-semibold text-ink-500"></p>
+                <button type="button" id="search-clear" class="shrink-0 text-xs font-semibold text-ink-400 hover:text-lav-600">닫기 ✕</button>
+              </div>
+              <div id="search-artists" class="hscroll mb-3"></div>
+              <div id="search-results" class="space-y-2.5"></div>
+              <button type="button" id="search-lyrics-db" class="btn-link mt-4 w-full">찾는 곡이 없나요? 가사 DB에서 직접 검색하기</button>
+            </div>
+
+            <div id="home-sections">
+              <section id="daily-card" class="card mt-6 p-5" aria-label="출석체크 · One day 챌린지"></section>
+
+              <section id="progress-wrap" class="mt-8" hidden>
+                <div class="sec-head">
+                  <h2>곡별 진행률</h2>
+                  <a href="#/library" class="more">보관함 ›</a>
+                </div>
+                <div id="progress-strip" class="hscroll mt-3 pt-1"></div>
+              </section>
+
+              <section class="mt-8">
+                <div class="sec-head">
+                  <h2>지금 인기 있는 곡</h2>
+                  <a href="#/chart" class="more">전체보기 ›</a>
+                </div>
+                <div id="chart-strip" class="hscroll mt-3"></div>
+              </section>
+
+              <button type="button" id="today-pick" class="relative mt-5 block h-[132px] w-full overflow-hidden rounded-3xl text-left text-white shadow-lift"></button>
+
+              <section class="mt-8">
+                <div class="sec-head">
+                  <h2>아티스트로 찾기</h2>
+                </div>
+                <p class="mt-1 text-xs text-ink-400">누르면 발매한 모든 곡을 볼 수 있어요</p>
+                <div id="artist-chips" class="mt-3 flex flex-wrap gap-2"></div>
+              </section>
+
+              <section class="mt-8">
+                <div class="sec-head">
+                  <h2>에디터 추천</h2>
+                </div>
+                <div id="song-grid" class="hscroll mt-3"></div>
+              </section>
+
+              <button type="button" id="open-paste" class="card mt-6 flex w-full items-center gap-4 p-4 text-left transition hover:border-lav-300">
+                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-lav-100 text-2xl">📝</span>
+                <span class="min-w-0">
+                  <span class="block font-bold text-ink">찾는 곡이 없나요?</span>
+                  <span class="block text-xs leading-5 text-ink-500">음원 사이트의 가사를 붙여넣으면 바로 학습할 수 있어요.</span>
+                </span>
+              </button>
+
+              <p class="mt-8 text-center text-[11px] leading-5 text-ink-400">
+                가사 원문은 각 저작권자에게 있으며 학습 목적으로만 표시됩니다.<br />
+                가사: <a class="underline" href="https://lrclib.net" target="_blank" rel="noopener">LRCLIB</a>, <a class="underline" href="https://music.163.com" target="_blank" rel="noopener">NetEase Cloud Music</a> · 앨범 아트: Apple iTunes
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═════════════ CHART ═════════════ -->
+        <section data-view="chart" class="view" hidden>
+          <header class="topbar">
+            <a href="#/home" class="btn-icon" aria-label="뒤로">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-6-6 6 6 6" /></svg>
+            </a>
+            <h1>지금 인기 있는 곡</h1>
+          </header>
+          <div class="px-5 pb-10">
+            <p id="chart-caption" class="text-xs text-ink-400">Apple Music 실시간 인기곡</p>
+            <ol id="chart-list" class="mt-3 space-y-2.5"></ol>
+          </div>
+        </section>
+
+        <!-- ═════════════ ARTIST ═════════════ -->
+        <section data-view="artist" class="view" hidden>
+          <header class="topbar">
+            <button type="button" data-back="#/home" class="btn-icon" aria-label="뒤로">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-6-6 6 6 6" /></svg>
+            </button>
+            <h1>아티스트</h1>
+          </header>
+          <div class="px-5 pb-10">
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-lav-400 to-lav-600 p-5 text-white shadow-lift">
+              <div id="artist-bg" class="pointer-events-none absolute inset-0 scale-110 bg-cover bg-center opacity-30 blur-xl"></div>
+              <div class="relative flex items-center gap-4">
+                <div id="artist-art" class="h-20 w-20 shrink-0 overflow-hidden rounded-full bg-white/20 ring-4 ring-white/40"></div>
+                <div class="min-w-0 flex-1">
+                  <p class="text-[11px] font-bold uppercase tracking-widest text-white/70">Artist</p>
+                  <p id="artist-name" class="truncate text-2xl font-extrabold"></p>
+                  <p id="artist-meta" class="text-sm text-white/80"></p>
+                </div>
+              </div>
+            </div>
+            <input id="artist-filter" class="input mt-4" type="search" placeholder="이 아티스트의 곡 중에서 찾기" maxlength="60" />
+            <p class="mt-2 text-xs text-ink-400">번안 방향: <b id="artist-direction" class="text-lav-600"></b> · 홈에서 바꿀 수 있어요</p>
+            <div id="artist-songs" class="mt-3 space-y-2.5"></div>
+          </div>
+        </section>
+
+        <!-- ═════════════ STUDY ═════════════ -->
+        <section data-view="study" class="view" hidden>
+          <header class="topbar">
+            <button type="button" id="study-back" class="btn-icon" aria-label="뒤로">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-6-6 6 6 6" /></svg>
+            </button>
+            <h1 id="study-heading">학습하기</h1>
+            <button type="button" id="study-chat" class="btn-icon" aria-label="리키에게 질문하기" title="리키에게 질문하기">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z" /><path stroke-linecap="round" d="M8.5 12h.01M12 12h.01M15.5 12h.01" /></svg>
+            </button>
+            <button type="button" id="lyrics-open" class="btn-icon" aria-label="가사 전체 보기" title="가사 전체 보기">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01" /></svg>
+            </button>
+          </header>
+
+          <div id="study-empty" class="px-8 pt-20 text-center">
+            <div id="study-empty-mascot" class="mx-auto h-24 w-24 animate-float"></div>
+            <h2 class="mt-5 text-xl font-extrabold text-ink">학습할 곡을 먼저 골라 주세요</h2>
+            <p class="mt-2 text-sm leading-6 text-ink-500">홈에서 좋아하는 곡을 고르면<br />가사를 한 줄씩 영어로 바꿔 볼 수 있어요.</p>
+            <a href="#/home" class="btn-primary mt-7 px-8">곡 고르러 가기</a>
+          </div>
+
+          <div id="study-main" class="px-5 pb-10" hidden>
+            <ol id="stepper" class="mt-1 flex items-center gap-2" aria-label="학습 단계"></ol>
+
+            <div class="card-flat mt-5 flex items-center gap-3 p-3">
+              <div id="study-art" class="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-lav-300 to-lav-500"></div>
+              <div class="min-w-0 flex-1">
+                <p id="study-title" class="truncate text-[15px] font-bold text-ink"></p>
+                <p id="study-artist" class="truncate text-xs text-ink-500"></p>
+              </div>
+              <span id="study-count" class="self-end text-xs font-semibold text-ink-400"></span>
+            </div>
+
+            <!-- Write / revise stages share the lyric card -->
+            <div id="stage-write">
+              <div class="card mt-4 p-5">
+                <div class="flex items-center justify-between">
+                  <span id="line-label" class="text-[11px] font-bold uppercase tracking-widest text-lav-500"></span>
+                  <div class="flex items-center">
+                    <button type="button" id="line-prev-btn" class="btn-icon h-8 w-8" aria-label="이전 줄">
+                      <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6" /></svg>
+                    </button>
+                    <button type="button" id="line-next-btn" class="btn-icon h-8 w-8" aria-label="다음 줄">
+                      <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" /></svg>
+                    </button>
+                  </div>
+                </div>
+                <p id="line-prev" class="mt-1 truncate text-[13px] text-ink-400"></p>
+                <p id="line-current" class="mt-1.5 text-[21px] font-extrabold leading-snug text-ink"></p>
+                <p id="line-next" class="mt-1.5 truncate text-[13px] text-ink-400"></p>
+                <div class="mt-5 flex items-center gap-3">
+                  <button type="button" id="listen-btn" class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-lav-100 text-lav-600 transition hover:bg-lav-200" aria-label="원문 듣기">
+                    <svg class="ml-0.5 h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z" /></svg>
+                  </button>
+                  <div id="wave" class="wave flex h-8 flex-1 items-center gap-[3px] overflow-hidden" aria-hidden="true"></div>
+                  <span id="listen-label" class="shrink-0 text-[11px] font-semibold text-ink-400">원문 듣기</span>
+                </div>
+              </div>
+
+              <div id="write-box">
+                <label for="draft-input" id="draft-label" class="label mt-6">영어로 가사를 작성해보세요.</label>
+                <div class="input-card">
+                  <textarea id="draft-input" rows="4" maxlength="200" placeholder="여기에 영어 가사를 입력하세요."></textarea>
+                  <div class="mt-1 flex items-end justify-between gap-3">
+                    <div id="syllable-meter" class="text-[11px] leading-4 text-ink-400"></div>
+                    <span id="draft-count" class="shrink-0 text-xs text-ink-400">0/200</span>
+                  </div>
+                </div>
+                <p id="study-tip" class="mt-3 text-xs leading-5 text-ink-400"></p>
+                <button type="button" id="feedback-btn" class="btn-primary mt-5 w-full py-4">다음</button>
+                <button type="button" id="skip-btn" class="btn-link mt-4 w-full text-ink-500">AI 피드백 없이 확정하고 다음 줄로</button>
+              </div>
+
+              <div id="revise-box" hidden>
+                <div id="revise-ref" class="mt-5"></div>
+                <label for="revise-input" class="label mt-5">피드백을 반영해 고쳐 써 보세요.</label>
+                <div class="input-card">
+                  <textarea id="revise-input" rows="4" maxlength="200"></textarea>
+                  <div class="mt-1 flex items-end justify-between gap-3">
+                    <div id="revise-meter" class="text-[11px] leading-4 text-ink-400"></div>
+                    <span id="revise-count" class="shrink-0 text-xs text-ink-400">0/200</span>
+                  </div>
+                </div>
+                <button type="button" id="revise-btn" class="btn-primary mt-5 w-full py-4">다시 평가받기</button>
+                <button type="button" id="revise-back" class="btn-link mt-4 w-full text-ink-500">피드백 다시 보기</button>
+              </div>
+            </div>
+
+            <div id="stage-feedback" hidden></div>
+            <div id="stage-compare" hidden></div>
+          </div>
+        </section>
+
+        <!-- ═════════════ CHAT ═════════════ -->
+        <section data-view="chat" class="relative flex h-full flex-col" hidden>
+          <header class="topbar border-b border-lav-100">
+            <button type="button" data-back="#/home" class="btn-icon" aria-label="뒤로">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-6-6 6 6 6" /></svg>
+            </button>
+            <div id="chat-avatar" class="h-10 w-10 shrink-0"></div>
+            <div class="min-w-0 flex-1 px-1">
+              <p id="chat-title" class="truncate text-[15px] font-extrabold text-ink">리키 · AI 튜터</p>
+              <p id="chat-context" class="truncate text-xs text-ink-400">친절하고 유쾌한 K-pop 영어 작문 선생님</p>
+            </div>
+            <button type="button" id="new-chat-btn" class="btn-icon" aria-label="새 대화" title="새 대화">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14" /></svg>
+            </button>
+            <button type="button" id="conv-open" class="btn-icon" aria-label="대화 기록" title="대화 기록">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 2M3.05 11a9 9 0 1 1 .5 4M3 4v5h5" /></svg>
+            </button>
+          </header>
+
+          <div id="chat-scroll" class="min-h-0 flex-1 overflow-y-auto">
+            <div class="px-4 py-5">
+              <div id="chat-empty" class="pt-6 text-center">
+                <div id="chat-empty-mascot" class="mx-auto h-24 w-24 animate-float"></div>
+                <h2 class="mt-4 text-xl font-extrabold text-ink">안녕하세요, 리키예요!</h2>
+                <p class="mx-auto mt-2 max-w-xs text-sm leading-6 text-ink-500">가사 번안, 영어 표현, 라임 만들기…<br />뭐든 물어보세요. 같이 '킬링 파트' 만들어 봐요 ✨</p>
+                <div id="chat-suggestions" class="mt-6 grid gap-2 text-left"></div>
+              </div>
+              <div id="chat-messages" class="space-y-5"></div>
+            </div>
+          </div>
+
+          <div class="border-t border-lav-100 bg-white/90 px-3 pt-2.5 backdrop-blur-xl" style="padding-bottom: max(0.75rem, env(safe-area-inset-bottom))">
+            <form id="chat-form">
+              <div class="flex items-end gap-2 rounded-[26px] border border-lav-100 bg-surface p-1.5 pl-4 transition focus-within:border-lav-300 focus-within:ring-4 focus-within:ring-lav-100">
+                <textarea id="chat-input" rows="1" maxlength="4000" class="max-h-40 min-h-[40px] flex-1 resize-none bg-transparent py-2 text-[15px] leading-6 text-ink placeholder:text-ink-400 focus:outline-none" placeholder="리키에게 메시지 보내기…"></textarea>
+                <button type="submit" id="chat-send" class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-lav-400 to-lav-600 text-white shadow-lift transition hover:brightness-105 disabled:bg-none disabled:bg-lav-200 disabled:shadow-none" aria-label="전송" disabled>
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19V5m0 0-6 6m6-6 6 6" /></svg>
+                </button>
+                <button type="button" id="chat-stop" class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink text-white" aria-label="응답 중지" hidden>
+                  <span class="h-3 w-3 rounded-sm bg-white"></span>
+                </button>
+              </div>
+              <p class="mt-1.5 text-center text-[10px] text-ink-400">Enter 전송 · Shift+Enter 줄바꿈 · 대화는 자동 저장·동기화돼요</p>
+            </form>
+          </div>
+
+          <div id="conv-backdrop" class="absolute inset-0 z-30 bg-ink/30" hidden></div>
+          <aside id="conv-panel" class="absolute inset-y-0 right-0 z-40 flex w-[82%] max-w-xs translate-x-full flex-col bg-white shadow-shell transition-transform duration-300">
+            <div class="flex items-center justify-between px-4 pb-3" style="padding-top: max(1rem, env(safe-area-inset-top))">
+              <p class="text-base font-extrabold text-ink">대화 기록</p>
+              <button type="button" id="conv-close" class="btn-icon" aria-label="닫기">✕</button>
+            </div>
+            <ul id="conv-list" class="flex-1 space-y-1 overflow-y-auto px-3 pb-4"></ul>
+            <div class="border-t border-lav-100 p-3">
+              <button type="button" id="chat-delete" class="btn-link w-full text-rose-500">현재 대화 삭제</button>
+            </div>
+          </aside>
+        </section>
+
+        <!-- ═════════════ LIBRARY ═════════════ -->
+        <section data-view="library" class="view" hidden>
+          <div id="lib-index">
+            <header class="topbar">
+              <a href="#/home" class="btn-icon text-lav-500" aria-label="홈으로">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6" /></svg>
+              </a>
+              <h1>나의 보관함</h1>
+            </header>
+            <div class="px-5 pb-10">
+              <div id="lib-tabs" class="-mx-5 flex gap-1.5 overflow-x-auto px-5 pb-1" role="tablist">
+                <button type="button" class="pill-tab" data-tab="all">전체</button>
+                <button type="button" class="pill-tab" data-tab="lines">내가 쓴 가사</button>
+                <button type="button" class="pill-tab" data-tab="fav">즐겨찾기</button>
+                <button type="button" class="pill-tab" data-tab="report">분석리포트</button>
+              </div>
+              <div id="lib-content" class="mt-4 space-y-3"></div>
+            </div>
+          </div>
+
+          <div id="lib-detail" hidden>
+            <header class="topbar">
+              <a href="#/library" class="btn-icon" aria-label="보관함으로">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-6-6 6 6 6" /></svg>
+              </a>
+              <span class="flex-1"></span>
+              <button type="button" id="detail-fav" class="btn-icon" aria-label="즐겨찾기"></button>
+              <div class="relative">
+                <button type="button" id="detail-more" class="btn-icon" aria-label="더보기">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="12" cy="19" r="1.8" /></svg>
+                </button>
+                <div id="detail-menu" class="absolute right-0 top-11 z-30 w-44 overflow-hidden rounded-2xl border border-lav-100 bg-white py-1 text-sm shadow-shell" hidden>
+                  <button type="button" id="detail-copy" class="block w-full px-4 py-2.5 text-left hover:bg-lav-50">가사 복사</button>
+                  <button type="button" id="detail-download" class="block w-full px-4 py-2.5 text-left hover:bg-lav-50">.txt로 저장</button>
+                  <button type="button" id="detail-delete" class="block w-full px-4 py-2.5 text-left text-rose-500 hover:bg-rose-50">삭제</button>
+                </div>
+              </div>
+            </header>
+            <div class="px-5 pb-10">
+              <div id="detail-hero" class="relative h-44 overflow-hidden rounded-3xl bg-gradient-to-br from-lav-300 to-lav-600 shadow-soft"></div>
+              <div class="mt-4 flex items-start justify-between gap-3">
+                <div class="min-w-0">
+                  <h1 id="detail-title" class="truncate text-xl font-extrabold text-ink"></h1>
+                  <p id="detail-meta" class="truncate text-sm text-ink-500"></p>
+                </div>
+                <button type="button" id="detail-continue" class="btn-outline shrink-0 px-4 py-2 text-xs">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12a9 9 0 0 1 15.5-6.3L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.3L3 16m0 5v-5h5" /></svg>
+                  다시 학습하기
+                </button>
+              </div>
+              <div id="detail-tabs" class="mt-5 flex border-b border-lav-100" role="tablist">
+                <button type="button" class="line-tab" data-tab="mine">내가 쓴 가사</button>
+                <button type="button" class="line-tab" data-tab="ai">AI 수정 가사</button>
+                <button type="button" class="line-tab" data-tab="report">분석 리포트</button>
+              </div>
+              <div id="detail-content" class="mt-4"></div>
+              <button type="button" id="detail-continue-2" class="btn-primary mt-6 w-full py-4">다시 학습하기</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═════════════ MY PAGE ═════════════ -->
+        <section data-view="mypage" class="view" hidden>
+          <div class="px-5 pb-10" style="padding-top: max(0.75rem, env(safe-area-inset-top))">
+            <div class="flex items-center justify-between">
+              <span data-sync-pill class="chip">…</span>
+              <button type="button" data-open-settings class="btn-icon" aria-label="설정">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" /></svg>
+              </button>
+            </div>
+
+            <div class="mt-2 flex flex-col items-center text-center">
+              <button type="button" id="my-avatar-btn" class="relative" aria-label="프로필 편집">
+                <span id="my-avatar" class="grid h-24 w-24 place-items-center rounded-full bg-gradient-to-br from-lav-200 to-lav-400 text-5xl shadow-lift ring-4 ring-white"></span>
+                <span class="absolute bottom-0 right-0 grid h-7 w-7 place-items-center rounded-full bg-white text-lav-500 shadow-soft">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z" /></svg>
+                </span>
+              </button>
+              <button type="button" id="my-edit" class="mt-3 inline-flex items-center gap-1.5 text-xl font-extrabold text-ink">
+                <span id="my-name"></span>
+                <svg class="h-4 w-4 text-ink-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 20h4L19 9l-4-4L4 16z" /></svg>
+              </button>
+              <p id="my-bio" class="mt-1 whitespace-pre-line text-sm leading-6 text-ink-500"></p>
+            </div>
+
+            <div class="card mt-6 grid grid-cols-3 divide-x divide-lav-100 py-4 text-center">
+              <div><p class="text-xs font-semibold text-ink-500">학습한 곡</p><p id="my-songs" class="mt-1 text-xl font-extrabold text-ink">0</p></div>
+              <div><p class="text-xs font-semibold text-ink-500">보관함 가사</p><p id="my-lines" class="mt-1 text-xl font-extrabold text-ink">0</p></div>
+              <div><p class="text-xs font-semibold text-ink-500">연속 출석</p><p id="my-streak" class="mt-1 text-xl font-extrabold text-ink">0</p></div>
+            </div>
+
+            <div class="quote-banner mt-4">
+              <svg class="absolute left-4 top-4 h-6 w-6 text-pink-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z" /></svg>
+              <p class="pl-9 font-hand text-[30px] leading-[1.05]">Little by little,<br />big changes.</p>
+              <svg class="absolute bottom-3 right-5 h-12 w-12 text-lav-400" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M24 4l5 13 14 1-11 9 4 14-12-8-12 8 4-14L5 18l14-1z" /></svg>
+            </div>
+
+            <div class="card mt-4 divide-y divide-lav-50 overflow-hidden" id="my-menu">
+              <button type="button" class="flex w-full items-center gap-3 px-5 py-4 text-left text-[15px] font-semibold text-ink transition hover:bg-lav-50" data-menu="report">
+                <svg class="h-5 w-5 text-ink-500" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2" /><path stroke-linecap="round" d="M9 3h6v3H9zM9 11h6M9 15h4" /></svg>
+                <span class="flex-1">학습 기록</span><span class="text-ink-300">›</span>
+              </button>
+              <button type="button" class="flex w-full items-center gap-3 px-5 py-4 text-left text-[15px] font-semibold text-ink transition hover:bg-lav-50" data-menu="attendance">
+                <svg class="h-5 w-5 text-ink-500" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" /><path stroke-linecap="round" d="M3.5 10h17M8 3v4M16 3v4" /><path stroke-linecap="round" stroke-linejoin="round" d="m9 15 2 2 4-4" /></svg>
+                <span class="flex-1">출석 달력</span><span class="text-ink-300">›</span>
+              </button>
+              <button type="button" class="flex w-full items-center gap-3 px-5 py-4 text-left text-[15px] font-semibold text-ink transition hover:bg-lav-50" data-menu="library">
+                <svg class="h-5 w-5 text-ink-500" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" /><path stroke-linecap="round" d="M4 9h16M10 13h4" /></svg>
+                <span class="flex-1">나의 보관함</span><span class="text-ink-300">›</span>
+              </button>
+              <button type="button" class="flex w-full items-center gap-3 px-5 py-4 text-left text-[15px] font-semibold text-ink transition hover:bg-lav-50" data-menu="chat">
+                <svg class="h-5 w-5 text-ink-500" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z" /></svg>
+                <span class="flex-1">AI 튜터 대화 기록</span><span class="text-ink-300">›</span>
+              </button>
+              <button type="button" class="flex w-full items-center gap-3 px-5 py-4 text-left text-[15px] font-semibold text-ink transition hover:bg-lav-50" data-menu="settings">
+                <svg class="h-5 w-5 text-ink-500" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path stroke-linecap="round" d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" /></svg>
+                <span class="flex-1">설정</span><span class="text-ink-300">›</span>
+              </button>
+              <button type="button" class="flex w-full items-center gap-3 px-5 py-4 text-left text-[15px] font-semibold text-ink transition hover:bg-lav-50" data-menu="help">
+                <svg class="h-5 w-5 text-ink-500" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 14v-2a8 8 0 0 1 16 0v2" /><rect x="3" y="14" width="4" height="6" rx="1.5" /><rect x="17" y="14" width="4" height="6" rx="1.5" /></svg>
+                <span class="flex-1">고객센터</span><span class="text-ink-300">›</span>
+              </button>
+            </div>
+            <p class="mt-6 text-center text-[11px] text-ink-400">Re-ric · K-pop Lyrics, Your English.</p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Bottom tab bar -->
+      <nav id="tabbar" class="tabbar" aria-label="하단 메뉴">
+        <a href="#/home" data-nav="home" class="tab-item">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" /></svg>홈
+        </a>
+        <a href="#/study" data-nav="study" class="tab-item">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18V5l11-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="17" cy="16" r="3" /></svg>학습하기
+        </a>
+        <a href="#/library" data-nav="library" class="tab-item">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" /><path stroke-linecap="round" d="M4 9h16M10 13h4" /></svg>보관함
+        </a>
+        <a href="#/mypage" data-nav="mypage" class="tab-item">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path stroke-linecap="round" d="M4 21a8 8 0 0 1 16 0" /></svg>마이페이지
+        </a>
+      </nav>
+    </div>
+
+    <!-- ───────────── Lyrics sheet ───────────── -->
+    <div id="lyrics-sheet" class="modal" data-modal hidden>
+      <div class="modal-panel flex max-h-[80vh] flex-col p-0 pt-6" role="dialog" aria-modal="true" aria-labelledby="lyrics-sheet-title">
+        <div class="sheet-handle"></div>
+        <div class="flex items-center justify-between px-6">
+          <div>
+            <h2 id="lyrics-sheet-title" class="text-lg font-extrabold text-ink">가사 전체</h2>
+            <p id="lyrics-source" class="text-[11px] text-ink-400"></p>
+          </div>
+          <label class="flex cursor-pointer items-center gap-2 text-xs font-semibold text-ink-500">
+            <input id="show-mine" type="checkbox" class="h-4 w-4 accent-[#8d7ff2]" checked />
+            내 번안 보기
+          </label>
+        </div>
+        <ol id="lyrics-list" class="mt-3 min-h-0 flex-1 space-y-0.5 overflow-y-auto px-3 pb-6"></ol>
+      </div>
+    </div>
+
+    <!-- ───────────── Settings ───────────── -->
+    <div id="settings-modal" class="modal" data-modal hidden>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+        <div class="sheet-handle"></div>
+        <div class="flex items-center justify-between">
+          <h2 id="settings-title" class="text-xl font-extrabold text-ink">설정 · 기기 연동</h2>
+          <button type="button" data-close-modal class="btn-icon" aria-label="닫기">✕</button>
+        </div>
+        <div class="mt-5 space-y-6">
+          <div>
+            <span class="label">내 동기화 코드</span>
+            <div class="flex gap-2">
+              <code id="sync-code" class="flex-1 truncate rounded-2xl border border-lav-100 bg-lav-50 px-4 py-3 font-mono text-sm text-lav-700"></code>
+              <button type="button" id="copy-code" class="btn-soft px-4 py-2.5 text-sm">복사</button>
+            </div>
+            <p class="mt-2 text-xs leading-5 text-ink-500">이 코드가 곧 내 계정이에요. 다른 기기에서 아래에 입력하면 대화 기록과 보관함이 똑같이 연동돼요. 다른 사람에게는 공유하지 마세요.</p>
+          </div>
+          <form id="link-form">
+            <label for="link-code" class="label">다른 기기의 코드로 로그인</label>
+            <div class="flex gap-2">
+              <input id="link-code" class="input font-mono text-sm" placeholder="동기화 코드 붙여넣기" maxlength="64" autocomplete="off" />
+              <button class="btn-primary px-5 py-2.5 text-sm" type="submit">연결</button>
+            </div>
+            <p class="mt-2 text-xs text-ink-500">연결하면 이 기기의 기록은 해당 계정으로 합쳐져요.</p>
+          </form>
+          <div>
+            <label for="level-select" class="label">학습 수준 (피드백 난이도)</label>
+            <select id="level-select" class="input">
+              <option value="beginner">초급 — 쉬운 단어로 차근차근</option>
+              <option value="intermediate">중급 — 자연스러운 표현 위주</option>
+              <option value="advanced">고급 — 라임·가창성까지 꼼꼼히</option>
+            </select>
+          </div>
+          <div class="rounded-2xl bg-lav-50 p-4 text-sm">
+            <div class="flex justify-between"><span class="text-ink-500">AI 튜터 연결</span><span id="status-ai" class="font-semibold">확인 중…</span></div>
+            <div class="mt-2 flex justify-between"><span class="text-ink-500">기록 저장소</span><span id="status-storage" class="font-semibold">확인 중…</span></div>
+            <div class="mt-2 flex justify-between"><span class="text-ink-500">마지막 동기화</span><span id="status-synced" class="font-semibold text-ink-700">–</span></div>
+          </div>
+          <div class="flex flex-wrap justify-between gap-2">
+            <button type="button" id="sync-now" class="btn-soft px-4 py-2.5 text-sm">지금 동기화</button>
+            <button type="button" id="reset-device" class="btn-link text-rose-500">이 기기에서 로그아웃</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────────── Profile ───────────── -->
+    <div id="profile-modal" class="modal" data-modal hidden>
+      <form id="profile-form" class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="profile-title">
+        <div class="sheet-handle"></div>
+        <div class="flex items-center justify-between">
+          <h2 id="profile-title" class="text-xl font-extrabold text-ink">프로필 편집</h2>
+          <button type="button" data-close-modal class="btn-icon" aria-label="닫기">✕</button>
+        </div>
+        <div id="profile-avatars" class="mt-5 flex flex-wrap justify-center gap-2"></div>
+        <label for="profile-name" class="label mt-5">이름 (닉네임)</label>
+        <input id="profile-name" class="input" maxlength="12" placeholder="예: 정원" autocomplete="nickname" />
+        <label for="profile-bio" class="label mt-4">한 줄 소개</label>
+        <input id="profile-bio" class="input" maxlength="40" placeholder="좋아하는 걸 하면서 더 나은 내가 되고 싶어!" />
+        <button type="submit" class="btn-primary mt-6 w-full py-4">저장하기</button>
+      </form>
+    </div>
+
+    <!-- ───────────── Help ───────────── -->
+    <div id="help-modal" class="modal" data-modal hidden>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="help-title">
+        <div class="sheet-handle"></div>
+        <div class="flex items-center justify-between">
+          <h2 id="help-title" class="text-xl font-extrabold text-ink">고객센터 · 자주 묻는 질문</h2>
+          <button type="button" data-close-modal class="btn-icon" aria-label="닫기">✕</button>
+        </div>
+        <div class="mt-4 space-y-2 text-sm">
+          <details class="rounded-2xl bg-lav-50 p-4">
+            <summary class="cursor-pointer font-bold text-ink">번역이랑 번안은 뭐가 달라요?</summary>
+            <p class="mt-2 leading-6 text-ink-500">번역은 뜻을 정확히 옮기는 것, 번안은 노래로 부를 수 있게 리듬·감정·라임까지 살려 다시 쓰는 거예요. Re-ric은 번안 연습을 도와줘요.</p>
+          </details>
+          <details class="rounded-2xl bg-lav-50 p-4">
+            <summary class="cursor-pointer font-bold text-ink">찾는 곡의 가사가 안 나와요.</summary>
+            <p class="mt-2 leading-6 text-ink-500">막 발매된 신곡은 가사 DB에 아직 없을 수 있어요. 홈의 "찾는 곡이 없나요?"에서 가사를 붙여넣으면 바로 학습할 수 있어요.</p>
+          </details>
+          <details class="rounded-2xl bg-lav-50 p-4">
+            <summary class="cursor-pointer font-bold text-ink">다른 기기에서도 기록을 보고 싶어요.</summary>
+            <p class="mt-2 leading-6 text-ink-500">마이페이지 → 설정에서 동기화 코드를 복사해, 다른 기기의 "다른 기기의 코드로 로그인"에 붙여넣으세요.</p>
+          </details>
+          <details class="rounded-2xl bg-lav-50 p-4">
+            <summary class="cursor-pointer font-bold text-ink">AI 피드백이 안 나와요.</summary>
+            <p class="mt-2 leading-6 text-ink-500">설정의 "AI 튜터 연결" 상태를 확인해 주세요. 서버의 .env에 OpenAI 또는 Gemini API 키가 설정되어 있어야 피드백과 채팅을 쓸 수 있어요.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────────── Paste lyrics ───────────── -->
+    <div id="paste-modal" class="modal" data-modal hidden>
+      <form id="paste-form" class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="paste-title">
+        <div class="sheet-handle"></div>
+        <div class="flex items-center justify-between">
+          <h2 id="paste-title" class="text-xl font-extrabold text-ink">가사 직접 붙여넣기</h2>
+          <button type="button" data-close-modal class="btn-icon" aria-label="닫기">✕</button>
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-3">
+          <div>
+            <label class="label" for="paste-song">곡 제목</label>
+            <input id="paste-song" class="input" required maxlength="100" placeholder="예: 밤편지" />
+          </div>
+          <div>
+            <label class="label" for="paste-artist">아티스트</label>
+            <input id="paste-artist" class="input" required maxlength="100" placeholder="예: 아이유" />
+          </div>
+        </div>
+        <span class="label mt-4">번안 방향</span>
+        <div class="seg-wrap" id="paste-direction">
+          <button type="button" class="seg active" data-direction="ko-en">한국어 → 영어</button>
+          <button type="button" class="seg" data-direction="en-ko">영어 → 한국어</button>
+        </div>
+        <label class="label mt-4" for="paste-lyrics">가사</label>
+        <textarea id="paste-lyrics" class="input h-52 resize-none leading-7" required maxlength="12000" placeholder="가사를 줄바꿈 그대로 붙여넣어 주세요"></textarea>
+        <button type="submit" class="btn-primary mt-5 w-full py-4">학습 시작하기</button>
+      </form>
+    </div>
+
+    <!-- ───────────── Attendance calendar ───────────── -->
+    <div id="attend-modal" class="modal" data-modal hidden>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="attend-title">
+        <div class="sheet-handle"></div>
+        <div class="flex items-center justify-between">
+          <h2 id="attend-title" class="text-xl font-extrabold text-ink">출석 달력</h2>
+          <button type="button" data-close-modal class="btn-icon" aria-label="닫기">✕</button>
+        </div>
+        <div id="cal-stats" class="mt-4 grid grid-cols-3 divide-x divide-lav-100 rounded-2xl bg-lav-50 py-3 text-center"></div>
+        <div class="mt-5 flex items-center justify-between">
+          <button type="button" id="cal-prev" class="btn-icon" aria-label="이전 달">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6" /></svg>
+          </button>
+          <p id="cal-title" class="text-base font-extrabold text-ink"></p>
+          <button type="button" id="cal-next" class="btn-icon" aria-label="다음 달">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" /></svg>
+          </button>
+        </div>
+        <div id="cal-grid" class="mt-2 grid grid-cols-7 gap-y-2"></div>
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-4 text-[11px] font-semibold text-ink-500">
+          <span class="flex items-center gap-1.5"><span class="h-3 w-3 rounded-full bg-gradient-to-br from-lav-400 to-lav-600"></span>출석</span>
+          <span class="flex items-center gap-1.5"><span>⭐</span>하루 3줄 챌린지 달성</span>
+          <span class="flex items-center gap-1.5"><span class="h-3 w-3 rounded-full ring-2 ring-lav-400"></span>오늘</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────────── Song complete ───────────── -->
+    <div id="done-modal" class="modal" data-modal hidden>
+      <div class="modal-panel text-center" role="dialog" aria-modal="true">
+        <div class="sheet-handle"></div>
+        <p class="text-6xl">🏆</p>
+        <h2 class="mt-3 text-2xl font-extrabold text-ink">한 곡 완성!</h2>
+        <p id="done-summary" class="mt-2 text-sm leading-6 text-ink-500"></p>
+        <div class="mt-6 grid gap-2">
+          <button type="button" id="done-library" class="btn-primary py-4">나만의 가사 보러 가기</button>
+          <button type="button" id="done-next" class="btn-soft py-4">다음 곡 고르기</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="pointer-events-none fixed inset-x-0 bottom-24 z-[60] flex justify-center px-6" hidden>
+      <div id="toast-body" class="max-w-sm animate-fade-up rounded-2xl bg-ink/90 px-5 py-3 text-center text-sm font-medium text-white shadow-shell backdrop-blur"></div>
+    </div>
+  </body>
+</html>

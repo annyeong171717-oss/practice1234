@@ -1,0 +1,30 @@
+{
+  "name": "re-ric",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Re-ric — K-pop 가사 번안으로 배우는 AI 영어 작문 튜터",
+  "scripts": {
+    "vendor": "node scripts/copy-vendor.mjs",
+    "css": "tailwindcss -i ./styles/tailwind.css -o ./public/css/app.css --minify",
+    "css:watch": "tailwindcss -i ./styles/tailwind.css -o ./public/css/app.css --watch",
+    "prebuild": "npm run vendor && npm run css",
+    "predev": "npm run vendor && npm run css",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "dependencies": {
+    "dompurify": "3.2.4",
+    "marked": "12.0.2",
+    "next": "^15.5.7",
+    "openai": "^4.77.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -1,0 +1,370 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-[#ebe8f8] font-sans text-ink antialiased;
+    background-image:
+      radial-gradient(50rem 30rem at 0% 0%, rgba(197, 189, 253, 0.55), transparent 60%),
+      radial-gradient(45rem 30rem at 100% 100%, rgba(169, 156, 248, 0.35), transparent 60%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-lav-200 text-ink;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(116, 101, 230, 0.25) transparent;
+  }
+  [hidden] {
+    display: none !important;
+  }
+}
+
+@layer components {
+  /* ── App frame ─────────────────────────────── */
+  .app-shell {
+    @apply relative mx-auto flex h-full w-full max-w-[520px] flex-col overflow-hidden bg-surface sm:shadow-shell;
+  }
+  .view {
+    @apply h-full overflow-y-auto overscroll-contain;
+  }
+  .topbar {
+    @apply sticky top-0 z-20 flex items-center gap-1 bg-surface/90 px-3 pb-2 backdrop-blur-xl;
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+  }
+  .topbar h1 {
+    @apply min-w-0 flex-1 truncate px-1 text-lg font-extrabold text-ink;
+  }
+  .tabbar {
+    @apply relative z-30 flex border-t border-lav-100 bg-white/95 backdrop-blur-xl;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .tab-item {
+    @apply flex flex-1 flex-col items-center gap-1 pb-2 pt-2.5 text-[11px] font-semibold text-ink-400 transition;
+  }
+  .tab-item.active {
+    @apply text-lav-600;
+  }
+
+  /* ── Surfaces ──────────────────────────────── */
+  .card {
+    @apply rounded-3xl border border-lav-100 bg-white shadow-soft;
+  }
+  .card-flat {
+    @apply rounded-2xl border border-lav-100 bg-white;
+  }
+  .sec-head {
+    @apply flex items-end justify-between;
+  }
+  .sec-head h2 {
+    @apply text-lg font-extrabold text-ink;
+  }
+  .sec-head .more {
+    @apply text-xs font-semibold text-ink-400 transition hover:text-lav-600;
+  }
+  .hscroll {
+    @apply -mx-5 flex gap-3 overflow-x-auto px-5 pb-2;
+    scrollbar-width: none;
+  }
+  .hscroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ── Buttons ───────────────────────────────── */
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-full px-5 py-3 text-[15px] font-bold transition
+      focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-lav-200 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-lav-400 to-lav-500 text-white shadow-lift hover:brightness-105 active:scale-[.98]
+      disabled:bg-none disabled:bg-lav-200 disabled:text-white disabled:shadow-none;
+  }
+  .btn-soft {
+    @apply btn bg-lav-100 text-lav-700 hover:bg-lav-200 active:scale-[.98] disabled:opacity-50;
+  }
+  .btn-outline {
+    @apply btn border border-lav-300 bg-white text-lav-600 hover:bg-lav-50 active:scale-[.98] disabled:opacity-50;
+  }
+  .btn-white {
+    @apply btn bg-white/95 text-lav-600 shadow-lift hover:bg-white active:scale-[.98];
+  }
+  .btn-link {
+    @apply inline-flex items-center justify-center gap-1 text-sm font-semibold text-lav-600 underline-offset-4 transition hover:underline;
+  }
+  .btn-icon {
+    @apply inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-ink transition hover:bg-lav-100
+      focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-lav-200 disabled:opacity-30;
+  }
+
+  /* ── Inputs ────────────────────────────────── */
+  .input {
+    @apply w-full rounded-2xl border border-lav-100 bg-white px-4 py-3 text-[15px] text-ink placeholder:text-ink-400
+      transition focus:border-lav-300 focus:outline-none focus:ring-4 focus:ring-lav-100;
+  }
+  .input-card {
+    @apply rounded-3xl border border-lav-100 bg-white p-4 shadow-soft transition focus-within:border-lav-300 focus-within:ring-4 focus-within:ring-lav-100;
+  }
+  .input-card textarea {
+    @apply w-full resize-none bg-transparent text-[16px] leading-7 text-ink placeholder:text-ink-400 focus:outline-none;
+  }
+  .search-pill {
+    @apply flex items-center gap-2 rounded-full border border-lav-100 bg-white py-1.5 pl-5 pr-1.5 shadow-soft transition
+      focus-within:border-lav-300 focus-within:ring-4 focus-within:ring-lav-100;
+  }
+  .label {
+    @apply mb-2 block text-[15px] font-bold text-ink;
+  }
+
+  /* ── Chips & tabs ──────────────────────────── */
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full bg-lav-100 px-3 py-1 text-xs font-semibold text-lav-700;
+  }
+  .chip-muted {
+    @apply inline-flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-ink-500;
+  }
+  .seg-wrap {
+    @apply inline-flex rounded-full border border-lav-100 bg-white p-1;
+  }
+  .seg {
+    @apply rounded-full px-3.5 py-1.5 text-xs font-bold text-ink-400 transition hover:text-lav-600;
+  }
+  .seg.active {
+    @apply bg-lav-500 text-white shadow-lift;
+  }
+  .pill-tab {
+    @apply shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-ink-500 transition hover:text-lav-600;
+  }
+  .pill-tab.active {
+    @apply bg-lav-500 text-white shadow-lift;
+  }
+  .line-tab {
+    @apply flex-1 border-b-2 border-transparent pb-2.5 text-center text-sm font-semibold text-ink-400 transition;
+  }
+  .line-tab.active {
+    @apply border-lav-500 text-lav-600;
+  }
+
+  /* ── Study stepper ─────────────────────────── */
+  .step {
+    @apply grid h-8 w-8 shrink-0 place-items-center rounded-full border-2 border-lav-200 bg-white text-xs font-bold text-ink-400 transition;
+  }
+  .step.done {
+    @apply border-lav-300 bg-lav-100 text-lav-600;
+  }
+  .step.current {
+    @apply border-lav-500 bg-lav-500 text-white shadow-lift;
+  }
+  .step-line {
+    @apply h-0.5 flex-1 rounded-full bg-lav-100 transition;
+  }
+  .step-line.done {
+    @apply bg-lav-400;
+  }
+
+  /* ── Feedback bits ─────────────────────────── */
+  .speech {
+    @apply relative rounded-2xl bg-white px-4 py-3 text-sm leading-6 text-ink-700 shadow-soft;
+  }
+  .speech::before {
+    content: '';
+    @apply absolute -left-1.5 top-6 h-3 w-3 rotate-45 bg-white;
+  }
+  .bullet-x,
+  .bullet-ok {
+    @apply flex gap-2 text-[13px] leading-6 text-ink-700;
+  }
+  .bullet-x::before,
+  .bullet-ok::before {
+    @apply mt-1 grid h-4 w-4 shrink-0 place-items-center rounded-full text-[10px] font-black text-white;
+  }
+  .bullet-x::before {
+    content: '✕';
+    @apply bg-rose-400;
+  }
+  .bullet-ok::before {
+    content: '✓';
+    @apply bg-emerald-400;
+  }
+  mark.hl {
+    @apply rounded bg-lav-100 px-0.5 font-semibold text-lav-700;
+  }
+  .score-ring {
+    background: conic-gradient(var(--ring-color, #8d7ff2) calc(var(--value, 0) * 1%), #eeecff 0);
+  }
+  .typing-dot {
+    @apply inline-block h-2 w-2 animate-blink rounded-full bg-lav-400;
+  }
+  .wave-bar {
+    @apply w-[3px] origin-center rounded-full bg-lav-300;
+  }
+  .wave.playing .wave-bar {
+    @apply animate-wave bg-lav-500;
+  }
+
+  /* ── Water-fill progress orb ───────────────── */
+  .water-orb {
+    @apply relative isolate shrink-0 overflow-hidden rounded-full;
+    background: radial-gradient(circle at 50% 32%, #ffffff 0%, #f7f6ff 50%, #e7e3fb 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(197, 189, 253, 0.7),
+      inset 0 -10px 22px rgba(116, 101, 230, 0.12),
+      0 10px 24px -8px rgba(116, 101, 230, 0.35);
+  }
+  .water-orb .water {
+    @apply absolute inset-x-0 bottom-0;
+    height: calc(var(--p, 0) * 1%);
+    background: linear-gradient(180deg, #b3a8fa 0%, #8d7ff2 55%, #7465e6 100%);
+    transition: height 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .water-orb .wave {
+    @apply absolute left-0 w-[200%];
+    bottom: calc(100% - 1px);
+    height: 12%;
+    min-height: 7px;
+    animation: orb-wave 3s linear infinite;
+  }
+  .water-orb .wave.front {
+    fill: #b3a8fa;
+  }
+  .water-orb .wave.back {
+    fill: #d4cdfd;
+    height: 15%;
+    animation-duration: 4.6s;
+    animation-direction: reverse;
+  }
+  .water-orb[data-empty] .wave {
+    display: none;
+  }
+  .water-orb .orb-label {
+    @apply absolute inset-0 z-[1] grid place-items-center font-extrabold tracking-tight text-ink-400;
+  }
+  .water-orb .orb-label.light {
+    @apply text-white;
+    clip-path: inset(calc((100 - var(--p, 0)) * 1%) 0 0 0);
+    transition: clip-path 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .water-orb::after {
+    content: '';
+    @apply pointer-events-none absolute z-[2] rounded-full;
+    left: 17%;
+    top: 9%;
+    width: 42%;
+    height: 22%;
+    transform: rotate(-24deg);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+  }
+  @keyframes orb-wave {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ── Modals & sheets ───────────────────────── */
+  .modal {
+    @apply fixed inset-0 z-50 flex items-end justify-center bg-ink/40 backdrop-blur-[2px] sm:items-center sm:p-4;
+  }
+  .modal-panel {
+    @apply max-h-[92vh] w-full max-w-[520px] animate-sheet-up overflow-y-auto rounded-t-[28px] bg-white p-6 shadow-shell sm:animate-fade-up sm:rounded-[28px];
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+  .sheet-handle {
+    @apply mx-auto -mt-2 mb-4 h-1.5 w-10 rounded-full bg-lav-200 sm:hidden;
+  }
+
+  /* ── Landing ───────────────────────────────── */
+  .intro-bg {
+    background:
+      radial-gradient(120% 60% at 50% 72%, rgba(150, 120, 255, 0.55), transparent 60%),
+      radial-gradient(60% 40% at 20% 10%, rgba(120, 90, 230, 0.45), transparent 70%),
+      linear-gradient(180deg, #120c38 0%, #24196a 45%, #3b2a9a 70%, #150f3f 100%);
+  }
+  .beam {
+    @apply pointer-events-none absolute top-[-10%] h-[85%] w-24 origin-top animate-sway opacity-60 blur-md;
+    background: linear-gradient(180deg, rgba(210, 200, 255, 0.85), rgba(170, 150, 255, 0.15) 70%, transparent);
+    clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%);
+    mix-blend-mode: screen;
+  }
+  .bokeh {
+    @apply pointer-events-none absolute animate-twinkle rounded-full bg-white;
+    box-shadow: 0 0 12px 4px rgba(200, 190, 255, 0.8);
+  }
+  .quote-banner {
+    @apply relative overflow-hidden rounded-3xl px-6 py-5 text-lav-800;
+    background: linear-gradient(120deg, #fde8f3 0%, #ece8ff 45%, #dcd6ff 100%);
+  }
+
+  /* ── Markdown inside chat bubbles ──────────── */
+  .md-body {
+    @apply break-words text-[15px] leading-7 text-ink-700;
+  }
+  .md-body > :first-child {
+    @apply mt-0;
+  }
+  .md-body > :last-child {
+    @apply mb-0;
+  }
+  .md-body p {
+    @apply my-2;
+  }
+  .md-body h1,
+  .md-body h2,
+  .md-body h3,
+  .md-body h4 {
+    @apply mb-2 mt-4 font-bold text-ink;
+  }
+  .md-body h1 {
+    @apply text-lg;
+  }
+  .md-body h2,
+  .md-body h3,
+  .md-body h4 {
+    @apply text-base;
+  }
+  .md-body strong {
+    @apply font-bold text-ink;
+  }
+  .md-body em {
+    @apply text-lav-700;
+  }
+  .md-body a {
+    @apply text-lav-600 underline decoration-lav-300 underline-offset-2;
+  }
+  .md-body ul {
+    @apply my-2 list-disc space-y-1 pl-5 marker:text-lav-400;
+  }
+  .md-body ol {
+    @apply my-2 list-decimal space-y-1 pl-5 marker:font-semibold marker:text-lav-500;
+  }
+  .md-body blockquote {
+    @apply my-3 rounded-r-xl border-l-4 border-lav-300 bg-lav-50 px-4 py-2 text-ink-700;
+  }
+  .md-body code {
+    @apply rounded-md bg-lav-50 px-1.5 py-0.5 font-mono text-[13px] text-lav-700;
+  }
+  .md-body pre {
+    @apply my-3 overflow-x-auto rounded-xl bg-ink p-4;
+  }
+  .md-body pre code {
+    @apply bg-transparent p-0 text-slate-100;
+  }
+  .md-body table {
+    @apply my-3 block w-full overflow-x-auto border-collapse text-sm;
+  }
+  .md-body th {
+    @apply border-b border-lav-100 bg-lav-50 px-3 py-2 text-left font-semibold text-ink;
+  }
+  .md-body td {
+    @apply border-b border-lav-50 px-3 py-2 align-top;
+  }
+  .md-body hr {
+    @apply my-4 border-lav-100;
+  }
+}

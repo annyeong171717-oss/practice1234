@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.data/
+.env
+.env.local
+.env*.local
+public/css/app.css
+public/vendor/
+*.log
+.DS_Store
+.vercel
+
+Practice/자기소개서.*
