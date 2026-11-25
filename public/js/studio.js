@@ -583,7 +583,7 @@ async function evaluate(text, isRevision) {
       stage = backStage;
       renderStage();
     }
-    toast(err.message || '피드백을 받지 못했어요.', 4000);
+    toast(err.message || '피드백을 받지 못했어요. 잠시 후 다시 눌러 주세요.', 5000);
   } finally {
     busy = false;
     updateButtons();

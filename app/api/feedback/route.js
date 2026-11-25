@@ -71,9 +71,9 @@ export async function POST(req) {
         maxTokens: 768,
         schema: FEEDBACK_SCHEMA,
         models: GEMINI_FEEDBACK_MODELS,
-        modelTimeoutMs: 5500,
-        busyRetries: 0,
-        parallelRace: true,
+        modelTimeoutMs: 12000,
+        busyRetries: 1,
+        parallelRace: false,
         messages: [
           { role: 'system', content: `${FEEDBACK_SYSTEM}\n\n[수준] ${levelGuide(body.level)}` },
           { role: 'user', content: userLines },
