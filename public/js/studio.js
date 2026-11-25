@@ -554,7 +554,7 @@ async function evaluate(text, isRevision) {
   el.heading.textContent = HEADINGS[target];
   stage = target;
   renderStepper();
-  (isRevision ? el.compare : el.feedback).replaceChildren(loadingBlock(isRevision ? '고친 문장을 이전과 비교하는 중이에요…' : '리키가 문장을 꼼꼼히 읽어보는 중이에요…'));
+  (isRevision ? el.compare : el.feedback).replaceChildren(loadingBlock(isRevision ? '고친 문장을 이전과 비교하는 중이에요…' : '리키가 문장을 읽고 있어요…'));
   $('[data-view="study"]').scrollTo({ top: 0, behavior: 'smooth' });
 
   try {

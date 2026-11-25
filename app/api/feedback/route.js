@@ -1,4 +1,4 @@
-import { completeJson, FEEDBACK_SCHEMA, FEEDBACK_SYSTEM, levelGuide } from '@/lib/ai';
+import { completeJson, FEEDBACK_SCHEMA, FEEDBACK_SYSTEM, GEMINI_FEEDBACK_MODELS, levelGuide } from '@/lib/ai';
 import { toAiError } from '@/lib/ai-errors';
 import { clampText, handleError, HttpError, json, rateLimit, readJson } from '@/lib/http';
 
@@ -51,15 +51,32 @@ export async function POST(req) {
       previousOverall: body.previousOverall ?? null,
     };
 
+    const userLines = [
+      `곡: ${task.song.title} — ${task.song.artist}`,
+      task.direction,
+      task.previousLine && `이전 줄: ${task.previousLine}`,
+      `원문: ${task.original}`,
+      task.nextLine && `다음 줄: ${task.nextLine}`,
+      `학습자 문장: ${task.draft}`,
+      task.previousDraft && `이전 시도: ${task.previousDraft}`,
+      task.previousOverall != null && `이전 점수: ${task.previousOverall}`,
+    ]
+      .filter(Boolean)
+      .join('\n');
+
     let content;
     try {
       content = await completeJson({
         temperature: 0.4,
-        maxTokens: 1400,
+        maxTokens: 768,
         schema: FEEDBACK_SCHEMA,
+        models: GEMINI_FEEDBACK_MODELS,
+        modelTimeoutMs: 5500,
+        busyRetries: 0,
+        parallelRace: true,
         messages: [
-          { role: 'system', content: `${FEEDBACK_SYSTEM}\n\n[학습자 수준]\n${levelGuide(body.level)}` },
-          { role: 'user', content: JSON.stringify(task) },
+          { role: 'system', content: `${FEEDBACK_SYSTEM}\n\n[수준] ${levelGuide(body.level)}` },
+          { role: 'user', content: userLines },
         ],
         signal: req.signal,
       });
